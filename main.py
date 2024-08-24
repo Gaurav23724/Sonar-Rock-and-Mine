@@ -1,9 +1,11 @@
+# create model of detaction of rock and  mine 
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
+import streamlit as st
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
-import streamlit as st
+from sklearn.model_selection import train_test_split
+
 # load dataset
 data = pd.read_csv("sonar data.csv")
 # separate  Rock and Mine 
@@ -18,6 +20,7 @@ x = data.iloc[:,:-1].values
 y = data.iloc[:,-1].values
 # Encoding the Dependent Variable
 from sklearn.preprocessing import LabelEncoder
+
 le  = LabelEncoder()
 y  = le.fit_transform(y)
 # split data into training and testing sets
